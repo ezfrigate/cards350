@@ -3,11 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { GameHomeComponent } from './game-home/game-home.component';
 import { FirstPageComponent } from './first-page/first-page.component';
 import { CardFlipComponent} from './card-flip/card-flip.component';
+import { StartPageComponent} from './start-page/start-page.component';
 
 const routes: Routes = [
   {path: 'game-home', component: GameHomeComponent},
   {path: 'first-page', component: FirstPageComponent},
-  {path: 'card-flip', component: CardFlipComponent}
+  {path: 'card-flip', component: CardFlipComponent},
+  {path: 'start-page', component: StartPageComponent}
 ];
 
 @NgModule({

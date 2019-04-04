@@ -1,0 +1,39 @@
+.button1 {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 30px 64x;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 32px;
+  }
+  .button2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 30px 64x;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 32px;
+  }
+  .button3 {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 30px 64x;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 32px;
+  }

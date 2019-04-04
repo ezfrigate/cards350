@@ -14,5 +14,5 @@ export class Hand {
 }
 
 export class Token {
-    token : String;
+    tokenValue : String;
 }

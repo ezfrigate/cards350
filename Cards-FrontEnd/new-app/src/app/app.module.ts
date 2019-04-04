@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { GameHomeComponent } from './game-home/game-home.component';
 import { FirstPageComponent } from './first-page/first-page.component';
 import { CardFlipComponent } from './card-flip/card-flip.component';
+import { StartPageComponent } from './start-page/start-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GameHomeComponent,
     FirstPageComponent,
-    CardFlipComponent
+    CardFlipComponent,
+    StartPageComponent
   ],
   imports: [
     BrowserModule,
