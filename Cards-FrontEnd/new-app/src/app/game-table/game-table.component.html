@@ -1,30 +1,50 @@
-<img class="grow0" width="100" alt="Card1" src="assets/jack_of_clubs.png">
-<img class="grow1" width="100" alt="Card2" src="assets/queen_of_hearts2.png">
-<img class="grow2" width="100" alt="Card3" src="assets/9_of_clubs.png">
-<img class="grow3" width="100" alt="Card4" src="assets/5_of_hearts.png">
-<img class="grow4" width="100" alt="Card5" src="assets/3_of_spades.png">
-<img class="grow5" width="100" alt="Card6" src="assets/7_of_diamonds.png">
+<!--Ally Cards-->
+<img class="Ally1" width="50" alt="Ally1" src="assets/{{rdm.cardsAlive[0].rank}}_of_{{rdm.cardsAlive[0].suit}}.png">
+<img class="Ally2" width="50" alt="Ally2" src="assets/{{rdm.cardsPlayable[0].rank}}_of_{{rdm.cardsPlayable[0].suit}}.png">
 
-<img class="Ally1" width="50" alt="Ally1" src="assets/ace_of_hearts.png">
-<img class="Ally2" width="50" alt="Ally2" src="assets/ace_of_spades.png">
+<!--cardpool-->
+<img class="pool0" width="100" alt="" src="assets/{{rdm.cardPool[0]?.rank}}_of_{{rdm.cardPool[0]?.suit}}.png">
+<img class="pool1" width="100" alt="" src="assets/{{rdm.cardPool[1]?.rank}}_of_{{rdm.cardPool[1]?.suit}}.png">
+<img class="pool2" width="100" alt="" src="assets/{{rdm.cardPool[2]?.rank}}_of_{{rdm.cardPool[2]?.suit}}.png">
+<img class="pool3" width="100" alt="" src="assets/{{rdm.cardPool[3]?.rank}}_of_{{rdm.cardPool[3]?.suit}}.png">
+<img class="pool4" width="100" alt="" src="assets/{{rdm.cardPool[4]?.rank}}_of_{{rdm.cardPool[4]?.suit}}.png">
+<img class="pool5" width="100" alt="" src="assets/{{rdm.cardPool[5]?.rank}}_of_{{rdm.cardPool[5]?.suit}}.png">
 
+
+<!--Current Hand-->
+  <img class="grow0" width="100" alt="" src="assets/{{rdm.cardsAlive[0]?.rank}}_of_{{rdm.cardsAlive[0]?.suit}}.png">
+  <img class="grow1" width="100" alt="" src="assets/{{rdm.cardsAlive[1]?.rank}}_of_{{rdm.cardsAlive[1]?.suit}}.png">
+  <img class="grow2" width="100" alt="" src="assets/{{rdm.cardsAlive[2]?.rank}}_of_{{rdm.cardsAlive[2]?.suit}}.png">
+  <img class="grow3" width="100" alt="" src="assets/{{rdm.cardsAlive[3]?.rank}}_of_{{rdm.cardsAlive[3]?.suit}}.png">
+  <img class="grow4" width="100" alt="" src="assets/{{rdm.cardsAlive[4]?.rank}}_of_{{rdm.cardsAlive[4]?.suit}}.png">
+  <img class="grow5" width="100" alt="" src="assets/{{rdm.cardsAlive[5]?.rank}}_of_{{rdm.cardsAlive[5]?.suit}}.png">
+
+
+
+
+
+<!--Last Hand-->
 <div class="hand spread">
   <div class="card hiddenCard0">
-    <img width="75" alt="Card1" src="assets/jack_of_clubs.png">
+    <img width="75" alt="Card1" src="assets/{{rdm.lastHand.myCards[0]?.rank}}_of_{{rdm.lastHand.myCards[0]?.suit}}.png">
   </div>
   <div class="card hiddenCard1">
-    <img width="75" alt="Card2" src="assets/queen_of_hearts2.png">
+    <img width="75" alt="Card2" src="assets/{{rdm.lastHand.myCards[1]?.rank}}_of_{{rdm.lastHand.myCards[1]?.suit}}.png">
   </div>
   <div class="card hiddenCard2">
-    <img width="75" alt="Card3" src="assets/9_of_clubs.png">
+    <img width="75" alt="Card3" src="assets/{{rdm.lastHand.myCards[2]?.rank}}_of_{{rdm.lastHand.myCards[2]?.suit}}.png">
   </div>
   <div class="card hiddenCard3">
-    <img width="75" alt="Card4" src="assets/5_of_hearts.png">
+    <img width="75" alt="Card4" src="assets/{{rdm.lastHand.myCards[3]?.rank}}_of_{{rdm.lastHand.myCards[3]?.suit}}.png">
   </div>
   <div class="card hiddenCard4">
-    <img  width="75" alt="Card5" src="assets/3_of_spades.png">
+    <img width="75" alt="Card5" src="assets/{{rdm.lastHand.myCards[4]?.rank}}_of_{{rdm.lastHand.myCards[4]?.suit}}.png">
   </div>
   <div class="card hiddenCard5">
-    <img  width="75" alt="Card5" src="assets/3_of_spades.png">
+    <img width="75" alt="Card5" src="assets/{{rdm.lastHand.myCards[5]?.rank}}_of_{{rdm.lastHand.myCards[5]?.suit}}.png">
   </div>
 </div>
+
+<!--trump setting-->
+
+    <div class="gradient-border" id="box"><img width="75" alt="Card5" src="assets/red_joker.png"></div>

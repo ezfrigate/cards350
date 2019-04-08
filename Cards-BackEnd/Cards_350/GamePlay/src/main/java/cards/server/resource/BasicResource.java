@@ -2,9 +2,6 @@ package cards.server.resource;
 
 import java.util.List;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,6 +21,9 @@ public class BasicResource {
 	@Autowired
 	BasicGameActionService basicGameActionService;
 	
+	@Autowired
+	TestObjects testObjects;
+	
 	@GetMapping(value = "/shuffle",produces= {MediaType.APPLICATION_JSON_VALUE})
 	public List<Card> shuffleDeck() {
 		Deck deck = basicGameActionService.shuffleDeck();
@@ -37,7 +37,8 @@ public class BasicResource {
 	
 	@GetMapping(value = "/currentState", produces= {MediaType.APPLICATION_JSON_VALUE})
 	public ResponseDataModel currentState() {
-		return basicGameActionService.currentState();
+		return testObjects.dummyResponseModel();
+		//return basicGameActionService.currentState();
 	}
 	
 	@PostMapping(value = "/updateTable", consumes= {MediaType.APPLICATION_JSON_VALUE})

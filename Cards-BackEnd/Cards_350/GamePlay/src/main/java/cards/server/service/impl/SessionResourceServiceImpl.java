@@ -5,9 +5,12 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+import org.springframework.stereotype.Service;
+
 import cards.server.datamodel.Token;
 import cards.server.service.SessionResourceService;
 
+@Service
 public class SessionResourceServiceImpl implements SessionResourceService{
 	
 	private List<String> sessionArray = new ArrayList<>();

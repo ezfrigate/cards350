@@ -12,8 +12,16 @@ public class Hand {
         myCards = new ArrayList<Card>();
         myPoints = 0;
     }
+    
+    
+    public Hand(ArrayList<Card> myCards, int myPoints) {
+		super();
+		this.myCards = myCards;
+		this.myPoints = myPoints;
+	}
 
-    void addCard(Card card) {
+
+	void addCard(Card card) {
         myCards.add(card);
         calcPoints();
     }
