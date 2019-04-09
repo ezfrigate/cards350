@@ -1,5 +1,5 @@
 export class ResponseDataModel{
-    sessionID : String
+    sessionID : string
 	trumpDisplay : Boolean
 	trumpSuit : Suit
 	numberOfCards : number
@@ -10,6 +10,15 @@ export class ResponseDataModel{
 	lastHand : Hand
 	
 	constructor(values: Object = {}) {
+        Object.assign(this, values);
+      }
+}
+
+export class UserPlayDataModel{
+    sessionID : string
+    cardPlayed : Card
+
+    constructor(values: Object = {}) {
         Object.assign(this, values);
       }
 }

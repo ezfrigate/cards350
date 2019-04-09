@@ -10,6 +10,7 @@ import cards.basic.Dealer;
 import cards.basic.Deck;
 import cards.basic.Hand;
 import cards.server.datamodel.ResponseDataModel;
+import cards.server.datamodel.User;
 import cards.server.datamodel.UserPlayDataModel;
 import cards.server.service.BasicGameActionService;
 import cards.server.service.SessionResourceService;
@@ -50,7 +51,7 @@ public class BasicGameActionServiceImpl implements BasicGameActionService{
 
 	@Override
 	public void startGame() {
-		List<String> sessionIDs = sessionResourceService.getSessionIDs();
+		List<User> users = sessionResourceService.getUsers();
 		//build shuffle all the hands to the users
 		
 	}

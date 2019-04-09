@@ -10,6 +10,8 @@ import { FirstPageComponent } from './first-page/first-page.component';
 import { CardFlipComponent } from './card-flip/card-flip.component';
 import { StartPageComponent } from './start-page/start-page.component';
 import { GameTableComponent } from './game-table/game-table.component';
+import { JoinGameComponent } from './join-game/join-game.component';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -18,15 +20,16 @@ import { GameTableComponent } from './game-table/game-table.component';
     FirstPageComponent,
     CardFlipComponent,
     StartPageComponent,
-    GameTableComponent
+    GameTableComponent,
+    JoinGameComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpModule,
-    HttpClientModule
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [ CookieService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

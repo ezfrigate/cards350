@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ResponseDataModel } from './GameTableDataModel';
+import { ResponseDataModel, UserPlayDataModel } from './GameTableDataModel';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -9,23 +9,33 @@ import { HttpClient } from '@angular/common/http';
 })
 export class GameTableComponent implements OnInit {
   @Input('rdm') rdm : ResponseDataModel;
-
+  sessionID: string;
+  userPlayDataModel : UserPlayDataModel;
   constructor(private httpClient : HttpClient) { }
 
-  ngOnInit() {
-    this.httpClient.get('http://localhost:8680/cards/currentState').subscribe((res : ResponseDataModel)=>{
-      this.rdm = res;
-      console.log(this.rdm)
-    });
-
-
+  ngOnInit(){
+    this.refreshPage()
   }
 
   refreshPage(){
     this.httpClient.get('http://localhost:8680/cards/currentState').subscribe((res : ResponseDataModel)=>{
       this.rdm = res;
-    });
+      console.log('hi')
+      setTimeout(() => {
+        this.refreshPage()
+      }, 2000000);
 
+    });
   }
 
+  playThisCard(i : number) {
+    this.sessionID = "hardcoded"
+      let userPlayDataModel =  new UserPlayDataModel()
+      userPlayDataModel.cardPlayed = this.rdm.cardsAlive[i]
+      userPlayDataModel.sessionID = this.sessionID;
+  
+      this.httpClient.post('http://localhost:8680/cards/updateTable', userPlayDataModel).subscribe((res : String)=>{
+        console.log(res)
+      })
+  }
 }
