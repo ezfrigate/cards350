@@ -1,7 +1,7 @@
 .button {
     position: absolute;
-    top : 70%;
-    left : 50%;
+    top : 65%;
+    left : 47.5%;
     padding: 15px 25px;
     font-size: 24px;
     text-align: center;
@@ -32,4 +32,59 @@ h1 {
     position: absolute;
     top : 10%;
     left : 50%;
+}
+
+.button2 {
+  position: absolute;
+  top : 80%;
+  left : 47.5%;
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button2:hover {background-color: #3e8e41}
+
+.button2:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+button2:disabled,
+  button2[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #f00c0c;
+}
+
+input[type=text] {
+  width: 130px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: "src/assets/ACE_of_SPADES.png";
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+  width: 100%;
+}
+
+.form{
+  position: absolute;
+  top : 55%;
+  left : 44.5%;
 }

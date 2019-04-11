@@ -14,14 +14,14 @@ import org.springframework.web.bind.annotation.RestController;
 import cards.server.datamodel.NumberOfPlayers;
 import cards.server.datamodel.Token;
 import cards.server.datamodel.User;
-import cards.server.service.SessionResourceService;
+import cards.server.service.SessionService;
 
 @CrossOrigin
 @RestController
 public class SessionResource {
 	
 	@Autowired
-	private SessionResourceService sessionResourceService;
+	private SessionService sessionResourceService;
 	
 	@GetMapping(value = "/startSession", produces= {MediaType.APPLICATION_JSON_VALUE})
 	public Token sessionTest(HttpServletRequest request, HttpSession session) {

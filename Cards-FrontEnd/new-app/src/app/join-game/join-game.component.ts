@@ -13,30 +13,42 @@ export class JoinGameComponent implements OnInit {
   @Output('ign') ign : string
   @Input('playersJoined') playersJoined : string
   userJoinedFlag : boolean
+  gameReadyFlag : boolean
   constructor( private cookieService: CookieService, private httpClient : HttpClient) {}
+  
 
   ngOnInit() {
-    this.userJoinedFlag = false
+    this.gameReadyFlag = false
     if(!this.cookieService.check('sessionID')){
-      this.httpClient.get('http://localhost:8680/cards/startSession').subscribe((res : Token)=>{
-        this.cookieService.set('sessionID', res.tokenValue)
-      });
+      this.userJoinedFlag = false
+    } else {
+      this.userJoinedFlag =true
     }
   this.refreshPage()
   }
 
   joinGame(){
+    this.user.inGameNick = this.ign
+    console.log(this.user.inGameNick)
+    if(!this.userJoinedFlag){
+      this.httpClient.get('http://localhost:8680/cards/startSession').subscribe((res : Token)=>{
+        this.cookieService.set('sessionID', res.tokenValue)
+        this.user.sessionID = res.tokenValue
+       // this.user.inGameNick = "UserX"
+        this.httpClient.post('http://localhost:8680/cards/addPlayer', this.user).subscribe((res : string)=>{
+          
+        })
+        this.userJoinedFlag = true
+      });
+    }
 
-    this.user.sessionID = this.cookieService.get('sessionID')
-    this.user.inGameNick = "UserX"
-    this.httpClient.post('http://localhost:8680/cards/addPlayer', this.user).subscribe((res : string)=>{
-
-    })
-    this.userJoinedFlag = true
   }
-
   isPlayerJoined(){
     return this.userJoinedFlag
+  }
+
+  isGameReady(){
+    return this.gameReadyFlag
   }
   setIGN() {
     this.cookieService.set('IGN' , '')
@@ -45,14 +57,22 @@ export class JoinGameComponent implements OnInit {
   setPlayersJoined(){
     this.httpClient.get('http://localhost:8680/cards/numberOfPlayers').subscribe((res : NumberOfPlayers)=>{
       let num =  res.num
+      if(num == 6)this.gameReadyFlag =true
       this.playersJoined = num.toString()
     })
   }
 
+  startGame(){
+    //to bidding page
+  }
   refreshPage(){
     this.setPlayersJoined()
     setTimeout(() => {
       this.refreshPage()
     }, 1000);
   }
+
+  onSubmit(event : any) {
+    this.ign = event.target.value
+ }
 }

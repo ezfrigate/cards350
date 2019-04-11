@@ -13,12 +13,12 @@ import cards.server.datamodel.ResponseDataModel;
 import cards.server.datamodel.User;
 import cards.server.datamodel.UserPlayDataModel;
 import cards.server.service.BasicGameActionService;
-import cards.server.service.SessionResourceService;
+import cards.server.service.SessionService;
 
 @Service
 public class BasicGameActionServiceImpl implements BasicGameActionService{
 	@Autowired
-	private SessionResourceService sessionResourceService;
+	private SessionService sessionResourceService;
 	
 	@Override
 	public Deck shuffleDeck() {
@@ -53,6 +53,5 @@ public class BasicGameActionServiceImpl implements BasicGameActionService{
 	public void startGame() {
 		List<User> users = sessionResourceService.getUsers();
 		//build shuffle all the hands to the users
-		
 	}
 }

@@ -9,7 +9,7 @@ import cards.server.datamodel.NumberOfPlayers;
 import cards.server.datamodel.Token;
 import cards.server.datamodel.User;
 
-public interface SessionResourceService {
+public interface SessionService {
 
 	public Token getToken(HttpSession session);
 

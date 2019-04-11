@@ -11,10 +11,10 @@ import org.springframework.stereotype.Service;
 import cards.server.datamodel.NumberOfPlayers;
 import cards.server.datamodel.Token;
 import cards.server.datamodel.User;
-import cards.server.service.SessionResourceService;
+import cards.server.service.SessionService;
 
 @Service
-public class SessionResourceServiceImpl implements SessionResourceService{
+public class SessionServiceImpl implements SessionService{
 
 	private List<User> users = new ArrayList<>();
 	

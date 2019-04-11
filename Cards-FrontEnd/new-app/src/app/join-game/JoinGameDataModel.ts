@@ -13,3 +13,14 @@ export class Token {
 export class NumberOfPlayers{
     num : number;
 }
+
+export class Hero {
+
+    constructor(
+      public id: number,
+      public name: string,
+      public power: string,
+      public alterEgo?: string
+    ) {  }
+  
+  }

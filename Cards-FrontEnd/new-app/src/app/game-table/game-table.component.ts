@@ -23,7 +23,7 @@ export class GameTableComponent implements OnInit {
       console.log('hi')
       setTimeout(() => {
         this.refreshPage()
-      }, 2000000);
+      }, 10000000);
 
     });
   }
