@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GameHomeComponent } from './game-home.component';
+import { SetAlliesComponent } from './set-allies.component';
 
-describe('GameHomeComponent', () => {
-  let component: GameHomeComponent;
-  let fixture: ComponentFixture<GameHomeComponent>;
+describe('SetAlliesComponent', () => {
+  let component: SetAlliesComponent;
+  let fixture: ComponentFixture<SetAlliesComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GameHomeComponent ]
+      declarations: [ SetAlliesComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GameHomeComponent);
+    fixture = TestBed.createComponent(SetAlliesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

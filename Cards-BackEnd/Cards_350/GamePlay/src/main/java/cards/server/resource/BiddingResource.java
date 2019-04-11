@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import cards.server.datamodel.BiddingUser;
@@ -19,8 +21,15 @@ public class BiddingResource {
 	public BiddingUser getCurrentBidAndUser() {
 		return biddingService.getcurrentBid();
 	}
-	/*
-	@PostMapping(value = "/setNewBid", produces = {MediaType.APPLICATION_JSON_VALUE})
-	public 
-	*/
+	
+	@PostMapping(value = "/setNewBid", consumes = {MediaType.APPLICATION_JSON_VALUE})
+	public void applyNewBidFromUser(@RequestBody BiddingUser biddingUser) {
+		biddingService.setNewBid(biddingUser);
+	}
+	
+	@PostMapping(value = "/setAllies", consumes = {MediaType.APPLICATION_JSON_VALUE})
+	public void setAllies(@RequestBody String[] cards) {
+		biddingService.setAllies(cards);
+		System.out.println(cards); //test line
+	}
 }

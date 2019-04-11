@@ -38,8 +38,12 @@ public class BasicResource {
 
 	@GetMapping(value = "/currentState", produces= {MediaType.APPLICATION_JSON_VALUE})
 	public ResponseDataModel currentState() {
-		return testObjects.dummyResponseModel();
-		//return basicGameActionService.currentState();
+		/*
+		 * 
+		 * please add "isYourTurn" flag in the model which will enabled only for the current user
+		 */
+		return testObjects.dummyResponseModel(); //test code
+		//return basicGameActionService.currentState(); //this is real line
 	}
 	
 	@PostMapping(value = "/updateTable", consumes= {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})

@@ -6,4 +6,8 @@ public interface BiddingService {
 
 	BiddingUser getcurrentBid();
 
+	void setNewBid(BiddingUser biddingUser);
+
+	void setAllies(String[] cards);
+
 }

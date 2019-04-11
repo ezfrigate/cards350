@@ -5,11 +5,3 @@ export class User {
         Object.assign(this, values);
       }
 }
-
-export class Token {
-    tokenValue : string;
-}
-
-export class NumberOfPlayers{
-    num : number;
-}
